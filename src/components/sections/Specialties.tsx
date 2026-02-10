@@ -38,18 +38,18 @@ export function Specialties() {
                                         src={specialty.image}
                                         alt={specialty.title}
                                         fill
-                                        className="object-cover opacity-20 grayscale brightness-50"
+                                        className="object-cover opacity-30 md:opacity-25 grayscale-[30%] brightness-75"
                                         priority={index === 0}
                                     />
                                     {/* Overlay for readability */}
                                     <div className={cn(
                                         "absolute inset-0 bg-gradient-to-b",
-                                        isMinimal && "from-[#FAF9F6]/80 to-[#FAF9F6]",
-                                        isDark && "from-black/60 to-black",
-                                        isUrban && "from-black/70 to-[#1A1A1A]",
-                                        isNeon && "from-[#05000A]/80 to-[#05000A]",
-                                        isEarth && "from-[#3D2B1F]/60 to-[#3D2B1F]",
-                                        isImpact && "from-[#EE1B24]/40 to-[#EE1B24]"
+                                        isMinimal && "from-[#FAF9F6]/70 to-[#FAF9F6]/90",
+                                        isDark && "from-black/50 to-black/80",
+                                        isUrban && "from-black/60 to-[#1A1A1A]/90",
+                                        isNeon && "from-[#05000A]/70 to-[#05000A]/90",
+                                        isEarth && "from-[#3D2B1F]/50 to-[#3D2B1F]/85",
+                                        isImpact && "from-[#EE1B24]/30 to-[#EE1B24]/80"
                                     )} />
                                 </div>
                             )}
@@ -76,22 +76,22 @@ export function Specialties() {
                             className="max-w-5xl w-full text-center space-y-8 relative z-10"
                         >
                             <span className={cn(
-                                "uppercase tracking-[0.5em] text-sm block font-black",
+                                "uppercase tracking-[0.3em] md:tracking-[0.5em] text-xs md:text-sm block font-black",
                                 isMinimal && "text-[#8C7B6A]",
                                 isNeon && "text-cyan-400 animate-pulse",
                                 isEarth && "text-[#D4A373]",
-                                isUrban && "bg-[#FFFF00] text-black px-4 py-1 w-fit mx-auto rotate-[-2deg]"
+                                isUrban && "bg-[#FFFF00] text-black px-3 md:px-4 py-1 w-fit mx-auto rotate-[-2deg]"
                             )}>
                                 {specialty.subtitle}
                             </span>
 
                             <h2 className={cn(
-                                "text-6xl md:text-9xl font-black leading-tight tracking-tighter",
-                                isMinimal && "font-serif italic font-light text-7xl md:text-8xl",
+                                "text-4xl md:text-6xl lg:text-9xl font-black leading-tight tracking-tighter px-4",
+                                isMinimal && "font-serif italic font-light text-5xl md:text-7xl lg:text-8xl",
                                 isDark && "uppercase italic",
-                                isUrban && "uppercase text-8xl md:text-[12rem]",
+                                isUrban && "uppercase text-5xl md:text-8xl lg:text-[12rem]",
                                 isNeon && "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-fuchsia-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]",
-                                isImpact && "text-[15vw] animate-pulse"
+                                isImpact && "text-[18vw] md:text-[15vw] animate-pulse"
                             )}>
                                 {specialty.title}
                             </h2>
@@ -105,13 +105,13 @@ export function Specialties() {
                             )} />
 
                             <p className={cn(
-                                "text-lg md:text-2xl leading-relaxed max-w-2xl mx-auto font-medium",
+                                "text-sm md:text-lg lg:text-2xl leading-relaxed max-w-2xl mx-auto font-medium px-4",
                                 isMinimal && "font-serif italic",
                                 isDark && "text-white/70 italic",
                                 isUrban && "text-white/80 uppercase font-bold tracking-wider",
-                                isNeon && "font-mono uppercase tracking-[0.3em] opacity-80",
+                                isNeon && "font-mono uppercase tracking-[0.2em] md:tracking-[0.3em] opacity-80 text-xs md:text-base",
                                 isEarth && "text-[#F5EBE0] italic",
-                                isImpact && "text-2xl font-black uppercase tracking-[0.5em]"
+                                isImpact && "text-base md:text-2xl font-black uppercase tracking-[0.3em] md:tracking-[0.5em]"
                             )}>
                                 {specialty.description}
                             </p>

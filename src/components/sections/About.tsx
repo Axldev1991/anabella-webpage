@@ -8,7 +8,7 @@ import { Section } from "@/components/layout/Section";
 export function About() {
     return (
         <Section id="about" className="border-t border-primary/5">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -16,8 +16,8 @@ export function About() {
                     className="order-2 md:order-1 relative"
                 >
                     <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-2xl -z-10 transform translate-x-4 translate-y-4" />
-                    <div className="rounded-2xl overflow-hidden bg-primary/5 p-4 transform hover:-rotate-2 transition-transform duration-500">
-                        <div className="relative h-[450px] w-full rounded-xl overflow-hidden shadow-xl">
+                    <div className="rounded-xl md:rounded-2xl overflow-hidden bg-primary/5 p-2 md:p-4 transform hover:-rotate-2 transition-transform duration-500">
+                        <div className="relative h-[350px] md:h-[450px] w-full rounded-lg md:rounded-xl overflow-hidden shadow-xl">
                             <Image
                                 src={content.personalInfo.aboutImage}
                                 alt="Trayectoria de Anabella"
@@ -36,10 +36,10 @@ export function About() {
                     className="order-1 md:order-2 space-y-8"
                 >
                     <div className="space-y-4">
-                        <h2 className="text-4xl font-black tracking-tight border-l-8 border-primary pl-6">
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tight border-l-4 md:border-l-8 border-primary pl-4 md:pl-6">
                             Acerca de Mí
                         </h2>
-                        <div className="space-y-6 text-lg leading-relaxed text-foreground/80 font-medium">
+                        <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed text-foreground/80 font-medium">
                             <p>
                                 Formada en danza contemporánea, jazz y ritmos urbanos, mi enfoque integra la expresión corporal con una profunda formación musical en percusión y batería.
                             </p>

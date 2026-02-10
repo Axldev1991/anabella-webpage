@@ -38,18 +38,18 @@ export function Specialties() {
                                         src={specialty.image}
                                         alt={specialty.title}
                                         fill
-                                        className="object-cover opacity-30 md:opacity-25 grayscale-[30%] brightness-75"
+                                        className="object-cover opacity-50 brightness-90"
                                         priority={index === 0}
                                     />
                                     {/* Overlay for readability */}
                                     <div className={cn(
                                         "absolute inset-0 bg-gradient-to-b",
-                                        isMinimal && "from-[#FAF9F6]/70 to-[#FAF9F6]/90",
-                                        isDark && "from-black/50 to-black/80",
-                                        isUrban && "from-black/60 to-[#1A1A1A]/90",
-                                        isNeon && "from-[#05000A]/70 to-[#05000A]/90",
-                                        isEarth && "from-[#3D2B1F]/50 to-[#3D2B1F]/85",
-                                        isImpact && "from-[#EE1B24]/30 to-[#EE1B24]/80"
+                                        isMinimal && "from-[#FAF9F6]/60 to-[#FAF9F6]/80",
+                                        isDark && "from-black/40 to-black/70",
+                                        isUrban && "from-black/45 to-[#1A1A1A]/75",
+                                        isNeon && "from-[#05000A]/50 to-[#05000A]/75",
+                                        isEarth && "from-[#3D2B1F]/40 to-[#3D2B1F]/70",
+                                        isImpact && "from-[#EE1B24]/25 to-[#EE1B24]/65"
                                     )} />
                                 </div>
                             )}

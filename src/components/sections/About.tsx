@@ -7,7 +7,7 @@ import { Section } from "@/components/layout/Section";
 
 export function About() {
     return (
-        <Section id="about" className="border-t border-primary/5">
+        <Section id="about" className="bg-white">
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -22,7 +22,7 @@ export function About() {
                                 src={content.personalInfo.aboutImage}
                                 alt="Trayectoria de Anabella"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-top"
                             />
                         </div>
                     </div>

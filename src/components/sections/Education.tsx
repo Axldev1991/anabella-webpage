@@ -5,7 +5,7 @@ import { Section } from "@/components/layout/Section";
 
 export function Education() {
     return (
-        <Section id="education">
+        <Section id="education" className="bg-background-light">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-8 md:mb-12">Educación</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                 {content.education.map((edu, index) => (

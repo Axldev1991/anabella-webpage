@@ -7,13 +7,13 @@ import * as Icons from "lucide-react";
 
 export function Skills() {
     return (
-        <Section id="skills" className="bg-primary/5 rounded-2xl md:rounded-[3rem] px-4 md:px-8 my-8 md:my-12">
+        <Section id="skills" className="bg-[#f0edf2]">
             <div className="mb-12 md:mb-16">
                 <h2 className="text-3xl md:text-4xl font-black tracking-tight">Habilidades & Expertise</h2>
                 <p className="text-foreground/60 font-bold mt-2 uppercase tracking-widest text-xs md:text-sm">Versatilidad artística y técnica pedagógica</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
                 {content.skills.map((skill, index) => {
                     return (
                         <motion.div

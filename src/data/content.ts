@@ -5,7 +5,6 @@ export const content = {
         role: "Bailarina Profesional & Docente",
         description: "Bailarina profesional e intérprete con formación en danza contemporánea, jazz y urbana. Mi perfil se complementa con una sólida base musical en percusión y batería, aportando versatilidad y una gran capacidad rítmica a la escena.",
         email: "anabellalopez.profdanza@gmail.com",
-        phone: "1168746812",
         instagram: "@beellaanna",
         heroImage: "/images/hero.jpg",
         aboutImage: "/images/about.jpg",

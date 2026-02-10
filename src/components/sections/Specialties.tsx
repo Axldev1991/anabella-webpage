@@ -29,6 +29,7 @@ export function Specialties() {
                             isEarth && "bg-[#3D2B1F] text-[#D4A373]",
                             isImpact && "bg-[#EE1B24] text-white"
                         )}
+                        style={{ scrollSnapAlign: 'start' }}
                     >
                         {/* Background Decorations & Image */}
                         <div className="absolute inset-0 z-0">
@@ -38,7 +39,11 @@ export function Specialties() {
                                         src={specialty.image}
                                         alt={specialty.title}
                                         fill
-                                        className="object-cover opacity-50 brightness-90"
+                                        className={cn(
+                                            "object-cover opacity-50 brightness-90",
+                                            specialty.id === "contemporaneo" && "object-bottom",
+                                            specialty.id === "folklore" && "object-top"
+                                        )}
                                         priority={index === 0}
                                     />
                                     {/* Overlay for readability */}

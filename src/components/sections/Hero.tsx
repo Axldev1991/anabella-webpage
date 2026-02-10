@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function Hero() {
     return (
-        <section className="relative flex flex-col gap-8 md:gap-12 md:flex-row items-center py-16 md:py-24 overflow-hidden max-w-[1200px] mx-auto px-4">
+        <section className="relative flex flex-col gap-8 md:gap-12 md:flex-row items-center min-h-[100dvh] py-16 md:py-24 overflow-hidden max-w-[1200px] mx-auto px-4 bg-background-light" style={{ scrollSnapAlign: 'start' }}>
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}

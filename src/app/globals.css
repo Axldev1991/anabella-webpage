@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7311d4;
+  --color-background-light: #f7f6f8;
+  --color-background-dark: #191022;
+  
+  --font-display: "Manrope", sans-serif;
+  
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 2rem;
+}
+
+:root {
+  --background: #f7f6f8;
+  --foreground: #141118;
+  --primary: #7311d4;
+}
+
+[data-theme='dark'] {
+  --background: #191022;
+  --foreground: #f7f6f8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Manrope', sans-serif;
+  scroll-behavior: auto !important; /* Lenis maneja el scroll */
+}
+
+@media (min-width: 768px) {
+  html, body {
+    cursor: none !important;
+  }
+  
+  a, button, [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Lenis Support */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(115, 17, 212, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #7311d4, #b066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

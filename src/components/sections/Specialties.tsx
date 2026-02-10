@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { content } from "@/data/content";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ChevronDown, MoveDown } from "lucide-react";
 
@@ -29,19 +30,43 @@ export function Specialties() {
                             isImpact && "bg-[#EE1B24] text-white"
                         )}
                     >
-                        {/* Background Decorations */}
-                        {isMinimal && (
-                            <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-[radial-gradient(circle_at_50%_50%,_#E5D3B3_0%,_transparent_70%)]" />
-                        )}
-                        {isDark && (
-                            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent" />
-                        )}
-                        {isNeon && (
-                            <div className="absolute inset-0">
-                                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[150px] animate-pulse" />
-                                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-fuchsia-500/20 rounded-full blur-[150px] animate-pulse delay-700" />
-                            </div>
-                        )}
+                        {/* Background Decorations & Image */}
+                        <div className="absolute inset-0 z-0">
+                            {specialty.image && (
+                                <div className="absolute inset-0">
+                                    <Image
+                                        src={specialty.image}
+                                        alt={specialty.title}
+                                        fill
+                                        className="object-cover opacity-20 grayscale brightness-50"
+                                        priority={index === 0}
+                                    />
+                                    {/* Overlay for readability */}
+                                    <div className={cn(
+                                        "absolute inset-0 bg-gradient-to-b",
+                                        isMinimal && "from-[#FAF9F6]/80 to-[#FAF9F6]",
+                                        isDark && "from-black/60 to-black",
+                                        isUrban && "from-black/70 to-[#1A1A1A]",
+                                        isNeon && "from-[#05000A]/80 to-[#05000A]",
+                                        isEarth && "from-[#3D2B1F]/60 to-[#3D2B1F]",
+                                        isImpact && "from-[#EE1B24]/40 to-[#EE1B24]"
+                                    )} />
+                                </div>
+                            )}
+
+                            {isMinimal && (
+                                <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-[radial-gradient(circle_at_50%_50%,_#E5D3B3_0%,_transparent_70%)]" />
+                            )}
+                            {isDark && (
+                                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent" />
+                            )}
+                            {isNeon && (
+                                <div className="absolute inset-0">
+                                    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[150px] animate-pulse" />
+                                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-fuchsia-500/20 rounded-full blur-[150px] animate-pulse delay-700" />
+                                </div>
+                            )}
+                        </div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}

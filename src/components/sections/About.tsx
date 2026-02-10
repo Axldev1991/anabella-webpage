@@ -19,7 +19,7 @@ export function About() {
                     <div className="rounded-2xl overflow-hidden bg-primary/5 p-4 transform hover:-rotate-2 transition-transform duration-500">
                         <div className="relative h-[450px] w-full rounded-xl overflow-hidden shadow-xl">
                             <Image
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3lBc2li6ZsbeP88_Cq-xiu-RuJqtgGbv_6YCJgoXZNfYq12KZ5HPewG5t8l1VrYvzM0hdoSExXQvpQODlqgKG3GlvY3Pq7OkJp3Oadl4AXWvefLe-E4EWB-7xEror7hLi7QL0AXZT51s2XrOP0zoteeFNSjjMgwf2O_B0rTs5Yn09e-_W1b82sH2UJz0ukts9ujSIvy1LckqdJH5HIc_VuHiPDecNGd1lcWyKndJOA7tdCVWDHXFxZ7zKwUjfGEnbcfH3VYyMod9e"
+                                src={content.personalInfo.aboutImage}
                                 alt="Trayectoria de Anabella"
                                 fill
                                 className="object-cover"

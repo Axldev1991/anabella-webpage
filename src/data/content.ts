@@ -7,7 +7,8 @@ export const content = {
         email: "anabellalopez.profdanza@gmail.com",
         phone: "1168746812",
         instagram: "@beellaanna",
-        heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCF0U4SQ0o9NmUKr1d0g83UIvX06b8kcs3EO_d_E0ymJ316Z0QLpq8awiXWgWIioe-YV1DQEnG6-cc24ZRE87Jf5qhuUCNV0tr9NujijELfpjmaWxDfyot5f-5jy2yXvOdaUs-SsuKN_xJO5uiV-QccSkpsV229OH-w7RFj5rU9EWlSaWrJOijf-Fdasahn4ElV0L6-ChQVOZVif2u_r5ChBFpDiVQ1mquAVIJRqnbKKDeu0LHzfqOdd8jBvqUxZtShCRynvyo2gc24",
+        heroImage: "/images/hero.jpg",
+        aboutImage: "/images/about.jpg",
     },
     navigation: [
         { name: "Acerca de Mí", href: "#about" },
@@ -28,6 +29,7 @@ export const content = {
             subtitle: "Esencia y Movimiento",
             description: "El retorno a lo orgánico. Minimalismo puro donde el silencio se convierte en gesto y el cuerpo en el único pincel.",
             theme: "minimal",
+            image: "/images/expresion.jpg",
         },
         {
             id: "contemporaneo",
@@ -35,6 +37,7 @@ export const content = {
             subtitle: "Precisión y Libertad",
             description: "La precisión del jazz se funde con la libertad contemporánea bajo un juego de luces y sombras profundas.",
             theme: "dark",
+            image: "/images/contemporaneo.jpg",
         },
         {
             id: "hiphop",
@@ -42,6 +45,7 @@ export const content = {
             subtitle: "Raw Energy",
             description: "Cultura urbana en su estado más puro. Groove, actitud y la libertad de crear sobre el concreto.",
             theme: "urban",
+            image: "/images/urban.jpg",
         },
         {
             id: "electro",
@@ -49,6 +53,7 @@ export const content = {
             subtitle: "Interfase · Velocidad · Futuro",
             description: "Cyberpunk/Neon. Velocidad y precisión en una interfase de movimiento digital.",
             theme: "neon",
+            image: "/images/electro.jpg",
         },
         {
             id: "folklore",
@@ -56,6 +61,7 @@ export const content = {
             subtitle: "Raíz y Tradición",
             description: "Raíz y tradición. La tierra hecha movimiento a través de texturas, sonidos y el legado de nuestra historia.",
             theme: "earth",
+            image: "/images/professional.jpg",
         },
         {
             id: "drums",
@@ -63,6 +69,7 @@ export const content = {
             subtitle: "Beat Kinetic",
             description: "Kinetic & High Impact. El ritmo como motor del cuerpo, la percusión como lenguaje primario.",
             theme: "impact",
+            image: "/images/street.jpg",
         },
     ],
     experience: [

@@ -3,7 +3,7 @@
 ## Resumen del Proyecto
 Este proyecto es una web profesional para la bailarina Anabella López, construida con Next.js 15, Tailwind v4 y Framer Motion. El objetivo principal fue crear una arquitectura **totalmente modular** donde el contenido sea independiente del diseño.
 
-## Estado Actual (Última actualización: 09/02/2026)
+## Estado Actual (Última actualización: 10/02/2026)
 
 ### ✅ Completado
 1. **Arquitectura modular**: Componentes UI en `src/components/ui`, secciones en `src/components/sections`, y contenido centralizado en `src/data/content.ts`.
@@ -19,7 +19,9 @@ Este proyecto es una web profesional para la bailarina Anabella López, construi
    - **Hero**: Tamaños de texto responsivos (5xl→6xl→8xl), botones full-width en mobile, padding ajustado
    - **About**: Grid adaptativo, imagen 350px en mobile vs 450px desktop, texto y bordes escalados
    - **Specialties**: Títulos 4xl→6xl→9xl, subtítulos y descripciones con tracking ajustado, padding horizontal añadido
-   - **Experience**: Cards compactas, iconos y textos reducidos, spacing optimizado
+   - **Experience**: 
+        - **Desktop**: Grid 2x2 estático optimizado para `100vh`. Animaciones automáticas de entrada.
+        - **Mobile**: Coreografía tipo "Poster" (2x2) con scroll, tarjetas sólidas y z-index dinámico.
    - **Skills**: Grid 2→3→4 columnas, padding y tamaños de íconos ajustados
    - **Education**: Grid 1→2→3 columnas, padding y textos responsivos
    - **Contact**: Formulario single-column en mobile, inputs y textos escalados, padding reducido
@@ -33,6 +35,25 @@ Este proyecto es una web profesional para la bailarina Anabella López, construi
 - **Tailwind v4 (@theme)**: Tokens de diseño en `globals.css` con sintaxis de variables CSS.
 - **Mobile-First Responsive**: Breakpoints: base (mobile) → md (768px) → lg (1024px).
 - **Next.js Image Optimization**: `priority` en primera imagen de specialties, `fill` para backgrounds.
+- **Separación de Componentes de Experiencia**: Debido a la complejidad de las animaciones de scroll en Mobile vs el grid estático de Desktop, se optó por dos implementaciones 100% independientes (`ExperienceMobile` y `ExperienceDesktop`) para evitar conflictos de hooks de Framer Motion.
+
+## 🎬 Saga de la Sección Experiencia (Choreography Refinement)
+Este componente fue el más complejo de estabilizar. Se documenta para evitar repetir errores:
+
+1. **Problema de "Fantasmas" (Transparencia)**:
+   - *Fallo:* Usar `useTransform` con rangos de opacidad (ej. 0.8) permitía ver las tarjetas del fondo.
+   - *Solución:* **Opacidad Binaria**. Solo `0` o `1`. Se usa una función lógica en `useTransform` para que el cambio sea instantáneo. Además, se forzó `backgroundColor: "#ffffff"` sólido y se aseguró solidez en el estilo.
+
+2. **Problema de Solapamiento en el Centro**:
+   - *Fallo:* Las tarjetas se pisaban al entrar y salir del foco central.
+   - *Solución:* Ajuste de Escala y Offsets. La tarjeta entra a `scale: 1` y se retira a `scale: 0.55` hacia las esquinas (`26vw` / `18vh`). Este tamaño permite que el centro quede libre para la siguiente tarjeta.
+
+3. **Jerarquía Visual (Z-Index)**:
+   - *Fallo:* Al ser sólidas, si el Z-Index no era perfecto, las tarjetas que se retiraban tapaban a las que entraban.
+   - *Solución:* **Z-Index Activo**. La tarjeta en el "peak" del scroll recibe `zIndex: 100` o superior, mientras que las estacionadas quedan en su índice original de profundidad.
+
+4. **Regla de Mobile-First en Animación**:
+   - La altura del contenedor móvil es `450vh` para permitir un scroll fluido de las 4 tarjetas. No tocar esta altura sin recalibrar las constantes `STEP` y `MOVE`.
 
 ## Estructura de Imágenes
 ```
@@ -69,6 +90,7 @@ Al abrir este proyecto:
 5. Respeta el sistema de breakpoints: base → md → lg.
 6. Las imágenes están en `/public/images/` - no usar URLs externas.
 7. Continúa desde este punto como si el hilo de conversación nunca se hubiera cortado.
+8. **Especial cuidado con la sección Experience**: Si el usuario pide cambios en Mobile, NUNCA toques Desktop y viceversa. Lee la sección "Saga de la Sección Experiencia" antes de proponer cambios en la coreografía de scroll.
 
 ## Comandos Útiles
 ```bash
